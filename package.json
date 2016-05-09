@@ -1,0 +1,34 @@
+{
+  "name": "burgerapp",
+  "version": "1.0.0",
+  "description": "Eat the burger application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryantBello/BurgerApp.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "npm",
+    "mysql",
+    "express"
+  ],
+  "author": "Bryant Bello",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BryantBello/BurgerApp/issues"
+  },
+  "homepage": "https://github.com/BryantBello/BurgerApp#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.5",
+    "mysql": "^2.10.2"
+  }
+}
