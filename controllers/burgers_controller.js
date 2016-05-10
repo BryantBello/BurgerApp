@@ -5,20 +5,25 @@ var app = express();
 
 
 
-//create routes
-router.get('/', function(req, res) {
-    actions.showBurgers(function(burger_data) {
-        res.render('index', { burger_data });
+module.exports.burgerController = function(app) {
+    app.get('/', function(req, res) {
+        burger.findAllBurgers(function(burger_data) {
+            res.render('index', { burger_data });
+        });
     });
-});
 
-router.post("/create", function(req, res) {
-    actions.addBurger(req.body.entry, function(result) {
-        console.log(result);
-        res.redirect("/");
+    app.post('/create', function(req, res) {
+        burger.addBurger(req.body.burger_name, function(result) {
+            console.log(result);
+            res.redirect('/');
+        });
     });
-});
 
-
-
-module.exports = router;
+    app.post('/update', function(req, res) {
+        console.log(req.body.id);
+        burger.devourBurger(req.body.id, function(result) {
+            console.log(result);
+            res.redirect('/');
+        });
+    });
+}
