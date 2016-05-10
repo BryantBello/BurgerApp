@@ -10,15 +10,15 @@ var orm = {
         });
     },
     addBurger: function(tableInput, burgerInput, cb) {
-        var a = "INSERT INTO " + tableInput + " (burger_name) VALUES (?)";
-        connection.query(a, [burgerInput], function(err, result) {
+        var s = "INSERT INTO " + tableInput + " (burger_name) VALUES (?)";
+        connection.query(s, [burgerInput], function(err, result) {
             if (err) throw err;
             cb(result);
         });
     },
     devourBurger: function(tableInput, idInput, cb) {
-        var d = "UPDATE" + tableInput + " SET devoured = 1 WHERE id = ?";
-        connection.query(d, [idInput], function(err, result) {
+        var s = "UPDATE" + tableInput + " SET devoured = 1 WHERE id = ?";
+        connection.query(s, [idInput], function(err, result) {
             if (err) throw err;
             cb(result);
         });
