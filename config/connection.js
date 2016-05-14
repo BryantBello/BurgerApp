@@ -13,7 +13,7 @@ var source = {
         host: 'localhost',
         user: 'root',
         password: "Njmitx123",
-        database: "burgerdb"
+        database: "burger_db"
     },
 
     jawsDB: {
