@@ -1,19 +1,25 @@
-var orm = require("../config/orm.js");
+var Sequelize = require("sequelize");
+
+var sequelize = require("../config/connection.js");
 
 
-
-var burgers = {
-    addBurger: function(nameInput, cb) {
-        orm.insertOne("burgers", nameInput, cb);
+var Burger = sequelize.define("character", {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
     },
-    devourBurger: function(inputId, cb) {
-        orm.updateOne("burgers", inputId, cb);
+
+    name: {
+        type: Sequelize.STRING,
     },
-    findAll: function(cb) {
-        orm.selectAll("burgers", function(res) {
-            cb(res);
-        });
+    devoured: {
+        type: Sequelize.BOOLEAN,
     }
-};
+});
 
-module.exports = burgers;
+
+Burger.sync();
+
+
+module.exports = Burger;
